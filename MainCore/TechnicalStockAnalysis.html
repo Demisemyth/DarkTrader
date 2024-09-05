@@ -1,0 +1,363 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>DarkTrader - Illuminating Your Path in the Stock Market</title>
+
+
+  <link rel="shortcut icon" href="images/favicon.svg" type="image/svg+xml">
+
+
+  <link rel="stylesheet" href="tech.css">
+
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&display=swap" rel="stylesheet">
+  <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+</head>
+
+<body>
+
+
+
+  <header class="header" data-header>
+    <div class="container">
+
+      <a href="#" class="logo">
+        <img src="images/tradinglogos.png" width="65" height="100" alt="Cryptex logo">
+        DrakTrader
+      </a>
+
+      <nav class="navbar" data-navbar>
+        <ul class="navbar-list">
+
+          <li class="navbar-item">
+            <a href="draktrader.html" class="navbar-link active" data-nav-link>Homepage</a>
+          </li>
+
+          <li class="navbar-item">
+            <a href="TechnicalStockAnalysis.html" class="navbar-link" data-nav-link>Technical Stock Analysis</a>
+          </li>
+
+          <li class="navbar-item">
+            <a href="predictation.html" class="navbar-link" data-nav-link>Predicting Stock Prices</a>
+          </li>
+
+          <li class="navbar-item">
+            <a href="backtesting.html" class="navbar-link" data-nav-link>Backtesting Stock Trading Strategies</a>
+          </li>
+          <li class="navbar-item">
+            <a href="blog.html" class="navbar-link" data-nav-link>Blog</a>
+          </li>
+
+
+
+
+
+        </ul>
+      </nav>
+
+      <button class="nav-toggle-btn" aria-label="Toggle menu" data-nav-toggler>
+        <span class="line line-1"></span>
+        <span class="line line-2"></span>
+        <span class="line line-3"></span>
+      </button>
+
+
+
+    </div>
+  </header>
+
+
+
+
+
+  <main>
+    <article>
+
+
+
+      <section class="section hero" aria-label="hero" data-section>
+        <div class="container">
+
+          <div class="hero-content">
+
+            <h1 class="h1 hero-title">DarkTrader - Elevate Your Stock Market Analysis with Technical Analysis</h1>
+
+<p class="hero-text">
+  DarkTrader offers advanced tools and resources for technical analysis, empowering you to make data-driven decisions in the stock market. Dive into our platform to explore comprehensive charts, indicators, and patterns for insightful market analysis.
+</p>
+
+
+<a href="TechnicalStockAnalysis.html" class="btn btn-primary">Get started now</a>
+
+
+          </div>
+
+          <figure class="hero-banner">
+            <img src="images/luke-chesser-JKUTrJ4vK00-unsplash.jpg" width="570" height="448" alt="hero banner" class="w-100">
+          </figure>
+
+        </div>
+      </section>
+
+
+
+
+
+
+
+      <section class="section market" aria-label="market update" data-section>
+        <div class="container">
+
+            <h1>Technical Stock Analysis</h1>
+            <br>
+            <br>
+
+        <form id="analysisForm">
+            <label for="symbol">Select Stock Symbol:</label>
+            <select id="symbol" name="symbol">
+
+                <option value="NBCC">NBCC</option>
+                <option value="ITC">ITC</option>
+                <option value="ONGC">ONGC</option>
+                <option value="ONGC">TCS</option>
+                <option value="ZEEL">ZEEL</option>
+                <option value="WIPRO">WIPRO</option>
+                <option value="VEDL">VEDL</option>
+                <option value="UPL">UPL</option>
+                <option value="ULTRACEMCO">ULTRACEMCO</option>
+                <option value="TITAN">TITAN</option>
+                <option value="TATAMOTORS">TATAMOTORS</option>
+                <option value="SUNPHARMA">SUNPHARMA</option>
+                <option value="NTPC">NTPC</option>
+                <option value="NIFTY50_all">NIFTY50_all</option>
+            </select>
+            <label for="indicator">Select Technical Indicator:</label>
+            <select id="indicator" name="indicator">
+              <option value="SMA">Simple Moving Average (SMA)</option>
+              <option value="EMA">Exponential Moving Average (EMA)</option>
+              <option value="RSI">Relative Strength Index (RSI)</option>
+              <option value="MACD">Moving Average Convergence Divergence (MACD)</option>
+
+              <option value="BollingerBands">Bollinger Bands</option>
+          </select>
+
+
+            <label for="candlesticks">Number of Candlesticks:</label>
+    <input type="number" id="candlesticks" name="candlesticks" value="20" min="1" max="100">
+    <br><br>
+    <button type="button" onclick="generatePlot()">Generate Plot</button>
+
+        </form>
+    </div>
+
+
+                  <td class="table-data">
+                    <button class="add-to-fav" aria-label="Add to favourite" data-add-to-fav>
+                    </button>
+                  </td>
+                  <td class="table-data">
+                    <button class="add-to-fav" aria-label="Add to favourite" data-add-to-fav>
+                    </button>
+                  </td>
+
+
+
+          </div>
+
+
+      </section>
+
+
+
+
+
+
+
+      <section class="section instruction" aria-label="instruction" data-section>
+        <div id="plotdesgin"><div id="plot"></div></div>
+
+
+      </section>
+
+
+
+
+
+
+
+      <section class="section about" aria-label="about" data-section>
+        <div class="container">
+
+          <figure class="about-banner">
+            <img src="images/isaac-smith-6EnTPvPPL6I-unsplash.jpg" width="748" height="436" loading="lazy" alt="about banner"
+              class="w-100">
+          </figure>
+
+          <div class="about-content">
+
+            <h2 class="h2 section-title">Unlock the Power of Technical Analysis with DarkTrader</h2>
+
+            <p class="section-text">
+              DarkTrader provides traders with the invaluable tool of technical analysis. By analyzing historical price movements and chart patterns, technical analysis helps traders make informed decisions about when to buy or sell stocks. It allows traders to identify trends, support and resistance levels, and potential entry and exit points, thereby enhancing their trading strategies and increasing the likelihood of successful trades.
+            </p>
+
+
+
+            <ul class="section-list">
+
+              <li class="section-item">
+                <div class="title-wrapper">
+                  <ion-icon name="checkmark-circle" aria-hidden="true"></ion-icon>
+
+                  <h3 class="h3 list-title">Leverage the Power of Technical Analysis</h3>
+                </div>
+
+                <p class="item-text">
+                  Technical analysis is a crucial tool for traders to analyze historical price data, identify patterns, and forecast future price movements in the stock market. By studying charts, indicators, and patterns, traders can make informed decisions about when to buy or sell stocks, manage risks, and maximize profits. DarkTrader empowers you to access advanced technical analysis tools, enabling you to stay ahead of the market trends and make profitable trading decisions.
+                </p>
+              </li>
+
+
+
+              <li class="section-item">
+                <div class="title-wrapper">
+                  <ion-icon name="checkmark-circle" aria-hidden="true"></ion-icon>
+
+                  <h3 class="h3 list-title">Master Technical Analysis Techniques</h3>
+                </div>
+
+                <p class="item-text">
+                  Technical analysis is an essential skill for navigating the complexities of the stock market. DarkTrader equips you with the tools and knowledge needed to master technical analysis techniques. Learn how to interpret charts, identify trends, and utilize indicators effectively to make informed trading decisions. With DarkTrader, you can unlock the potential of technical analysis and enhance your trading strategies to achieve success in the stock market.
+                </p>
+              </li>
+
+
+
+            </ul>
+
+            <a href="TechnicalStockAnalysis.html" class="btn btn-primary">Explore More</a>
+
+          </div>
+
+        </div>
+      </section>
+
+
+
+
+
+
+
+
+
+    </article>
+  </main>
+
+
+
+
+
+
+
+  <footer class="footer">
+
+    <div class="footer-top" data-section>
+      <div class="container">
+
+        <div class="footer-brand">
+
+          <a href="#" class="logo">
+            <img src="images/logo.svg" width="50" height="50" alt="Cryptex logo">
+            DarkTrader
+          </a>
+
+          <h2 class="footer-title">Developer: Aditya Rathivadekar </h2>
+
+          <a href="mailto:hello.cryptex@gmail.com" class="footer-contact-link">petwhiz8@gmail.com</a>
+
+
+
+        </div>
+
+
+
+        <ul class="footer-list">
+
+          <li>
+            <p class="footer-list-title">Services</p>
+          </li>
+
+          <li>
+            <a href="TechnicalStockAnalysis.html" class="footer-link">Technical Analysis</a>
+          </li>
+
+          <li>
+            <a href="backtesting.html" class="footer-link">Backtesting</a>
+          </li>
+
+          <li>
+            <a href="draktrader.html" class="footer-link">Real-time Stock Prices</a>
+          </li>
+
+          <li>
+            <a href="predictation.html" class="footer-link">Prediction Stock Prices</a>
+          </li>
+
+        </ul>
+
+
+        <ul class="footer-list">
+
+          <li>
+            <p class="footer-list-title">Support</p>
+          </li>
+
+          <li>
+            <a href="https://youtu.be/PuZY9q-aKLw" class="footer-link">Neural Network</a>
+          </li>
+
+          <li>
+            <a href="https://flask.palletsprojects.com/en/3.0.x/" class="footer-link">Flask Server</a>
+          </li>
+
+          <li>
+            <a href="https://machinelearning101.readthedocs.io/en/latest/_pages/01_introduction.html" class="footer-link">Machine Learning</a>
+          </li>
+
+          <li>
+            <a href="https://youtu.be/s3CnE2tqQdo" class="footer-link">Stock Trend Prediction</a>
+          </li>
+
+
+
+        </ul>
+
+
+
+      </div>
+    </div>
+
+  </footer>
+
+
+
+
+
+
+  <script src="tech.js" defer></script>
+
+
+  <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+  <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+
+
+
+</body>
+
+</html>
